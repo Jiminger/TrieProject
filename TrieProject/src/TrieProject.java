@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * @author : James Ritchie
- * @date : December 04, 2021
+ * @date : December 6, 2021
  * @course : COSC-310: Data Structures and Algorithms (Fall 2021)
  *
  * Program Description:
