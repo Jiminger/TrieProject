@@ -5,7 +5,7 @@ This is a java implementation for a group research project on the trie data stru
 <br>
 This specific implementation takes the complete text of the story "<i>'Twas the Night Before Christmas</i>" and converts it into a trie.
 <br>
-The user is then given a list of commands that can be used to further modify the trie.
+The user is then given a list of commands that can be used to further modify and search the trie.
 
 Supported Operations:
 <ul>
