@@ -1,5 +1,5 @@
 # TrieProject
-Java implementation of Trie Data Structure
+<h1>Java implementation of Trie Data Structure</h1>
 
 This is a java implementation for a group research project on the trie data structure.
 <br>
