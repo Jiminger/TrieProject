@@ -3,10 +3,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ *  FileIO Class used for handling the specific input file for this implementation/demo
+ */
+
 public class FileIO {
 
     private Scanner fileScanner;
 
+
+    /**
+     * FileIO constructor
+     */
     public FileIO() {
         try {
             File inputFile = new File("Twas the Night before Christmas.txt");
@@ -16,6 +24,10 @@ public class FileIO {
         }
     }
 
+    /**
+     * Method used to process the text of the input file
+     * @return a list of the processed words from the input file
+     */
     public List<String> processText() {
         List<String> stringList = new ArrayList<>();
         System.out.println("Processing Text...");

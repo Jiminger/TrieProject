@@ -1,13 +1,25 @@
 import java.util.HashMap;
 
+/**
+ * The Trie class
+ */
 public class Trie {
 
     private final TrieNode root;
 
+
+    /**
+     * Trie constructor,
+     * Creates and empty trie node object as the root.
+     */
     public Trie() {
         this.root = new TrieNode();
     }
 
+    /**
+     * Method used to insert a word into the trie
+     * @param wordToAdd word to add to the trie
+     */
     public void insert(String wordToAdd) {
 
         HashMap<Character, TrieNode> children = root.getChildren();
@@ -30,6 +42,11 @@ public class Trie {
         }
     }
 
+    /**
+     * Method used to search the trie for a specific word
+     * @param wordToSearch word to search the trie tree for
+     * @return true or false based on whether the word was found
+     */
     public boolean search(String wordToSearch) {
 
         HashMap<Character, TrieNode> children = root.getChildren();
@@ -49,9 +66,22 @@ public class Trie {
         return node != null && node.isWord();
     }
 
+    /**
+     * Method for deleting a word from the trie
+     * @param word  the word to delete.
+     */
+
     public void delete(String word) {
         delete(root, word, 0);
     }
+
+    /**
+     * Private method to carry out the deleting process requested by the user.
+     * @param current current node during traversal
+     * @param word word to delete
+     * @param index index of the word
+     * @return boolean based on whether to delete a node, used for recursion.
+     */
 
     private boolean delete(TrieNode current, String word, int index) {
         if (index == word.length()) {

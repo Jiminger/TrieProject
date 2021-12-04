@@ -1,15 +1,34 @@
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author : James Ritchie
+ * @date : December 04, 2021
+ * @course : COSC-310: Data Structures and Algorithms (Fall 2021)
+ *
+ * Program Description:
+ *  This project is to demonstrate the implementation of the trie data structure in java.
+ *  The program reads from a text input file and creates a trie tree based on the text.
+ *  In the case of this program the text of "'Twas the Night Before Christmas" was used.
+ *  After the text is process the main program runs and offers the user a selection of options to manipulate the
+ *  trie tree further, such as: insert, search, or delete words in the trie.
+ */
+
 public class TrieProject {
 
-    public static void main(String[] args) {
 
+    /**
+     * Main method of the program
+     * @param args -
+     */
+    public static void main(String[] args) {
         TrieProject trieProject = new TrieProject();
         trieProject.start();
-
     }
 
+    /**
+     * Method to start the program once TrieProject object is created.
+     */
     public void start() {
         FileIO io = new FileIO();
         List<String> wordList = io.processText();
@@ -18,7 +37,7 @@ public class TrieProject {
             trie.insert(s);
         }
         System.out.println();
-        printInstructions();
+        printCommands();
         boolean stopProgram = false;
         Scanner scanner = new Scanner(System.in);
         while (!stopProgram) {
@@ -41,7 +60,7 @@ public class TrieProject {
                     trie.delete(input[1]);
                     break;
                 case "?":
-                    printInstructions();
+                    printCommands();
                     break;
                 case "exit":
                     stopProgram = true;
@@ -53,7 +72,10 @@ public class TrieProject {
         }
     }
 
-    public void printInstructions() {
+    /**
+     * Method to print the command list for the user.
+     */
+    public void printCommands() {
         System.out.println("Please use one of the following commands: ");
         System.out.println("Insert abc  ----  where abc is the word you would like to insert.");
         System.out.println("Search abc  ----  where abc is the word you would like to search for.");
