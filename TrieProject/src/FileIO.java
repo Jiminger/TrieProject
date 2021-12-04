@@ -17,7 +17,7 @@ public class FileIO {
      */
     public FileIO() {
         try {
-            File inputFile = new File("Twas the Night before Christmas.txt");
+            File inputFile = new File("Twas the Night Before Christmas.txt");
             fileScanner = new Scanner(inputFile);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
