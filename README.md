@@ -18,4 +18,5 @@ Supported Operations:
 
 Course: 
 COSC-310: Data Structures and Algorithms (Fall 2021)
+<br>
 Frostburg State University
