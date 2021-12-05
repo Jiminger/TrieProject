@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * The Trie class
@@ -66,43 +67,45 @@ public class Trie {
         return node != null && node.isWord();
     }
 
-    /**
-     * Method for deleting a word from the trie
-     * @param word  the word to delete.
-     */
-
-    public void delete(String word) {
-        delete(root, word, 0);
-    }
 
     /**
-     * Private method to carry out the deleting process requested by the user.
-     * @param current current node during traversal
-     * @param word word to delete
-     * @param index index of the word
-     * @return boolean based on whether to delete a node, used for recursion.
+     * Method used to delete a specified word from the trie
+     * @param wordToDelete word meant to be deleted from the trie
+     * @return boolean based on whether the word was successfully deleted or not from the trie
      */
+    public boolean delete(String wordToDelete){
 
-    private boolean delete(TrieNode current, String word, int index) {
-        if (index == word.length()) {
-            if (!current.isWord()) {
-                return false;
-            }
-            current.setIsWord(false);
-            return current.getChildren().isEmpty();
-        }
-        char c = word.charAt(index);
-        TrieNode node = current.getChildren().get(c);
-        if (node == null) {
+        if(!search(wordToDelete)){
             return false;
         }
-        boolean deleteCurrentNode = delete(node, word, index + 1) && !node.isWord();
 
-        if (deleteCurrentNode) {
-            current.getChildren().remove(c);
-            return current.getChildren().isEmpty();
+        Stack<TrieNode> stack = new Stack<>();
+        TrieNode currentNode = this.root;
+        stack.push(currentNode);
+        boolean isLastLetter = true;
+
+        for(int i = 0; i < wordToDelete.length(); i++){
+            currentNode = currentNode.getChildren().get(wordToDelete.charAt(i));
+            stack.push(currentNode);
         }
-        return false;
+
+        while(!stack.isEmpty()){
+            currentNode = stack.pop();
+
+            if(isLastLetter){
+                currentNode.setIsWord(false);
+                isLastLetter = false;
+            }
+
+            if(currentNode.isWord()){
+                break;
+            }
+
+            if(!stack.isEmpty() && currentNode.getChildren().isEmpty()){
+                stack.peek().getChildren().remove(currentNode.getC());
+            }
+        }
+        return true;
     }
 
 }
