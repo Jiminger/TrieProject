@@ -40,7 +40,7 @@ public class FileIO {
             }
 
 
-            // Skipping first line containing title of the story.
+            // Skipping first lines containing title of the story.
             if (line.charAt(0) != '#') {
                 String[] words = line.split(" ");
 
