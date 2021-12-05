@@ -17,7 +17,7 @@ public class FileIO {
      */
     public FileIO() {
         try {
-            File inputFile = new File("Twas the Night Before Christmas.txt");
+            File inputFile = new File("Twas the Night before Christmas.txt");
             fileScanner = new Scanner(inputFile);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -30,7 +30,7 @@ public class FileIO {
      */
     public List<String> processText() {
         List<String> stringList = new ArrayList<>();
-        System.out.println("Processing Text...");
+        System.out.println("\nProcessing Text...");
 
 
         while (fileScanner.hasNextLine()) {

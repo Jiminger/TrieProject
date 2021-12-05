@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * @author : James Ritchie
- * @date : December 6, 2021
+ * @date : December 04, 2021
  * @course : COSC-310: Data Structures and Algorithms (Fall 2021)
  *
  * Program Description:
@@ -46,8 +46,13 @@ public class TrieProject {
 
             switch (input[0]) {
                 case "insert":
-                    trie.insert(input[1]);
-                    System.out.println(input[1] + " inserted.");
+                    if(!trie.search(input[1])) {
+                        trie.insert(input[1]);
+                        System.out.println(input[1] + " successfully inserted.");
+                    }else{
+                        System.out.println(input[1] + " already exists.");
+                    }
+
                     break;
                 case "search":
                     if (trie.search(input[1])) {
@@ -57,7 +62,11 @@ public class TrieProject {
                     }
                     break;
                 case "delete":
-                    trie.delete(input[1]);
+                    if(trie.delete(input[1])){
+                        System.out.println(input[1] + " successfully deleted!");
+                    }else{
+                        System.out.println("Error deleting, " + input[1] + " not found in tree.");
+                    }
                     break;
                 case "?":
                     printCommands();
