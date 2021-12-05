@@ -48,7 +48,7 @@ public class TrieProject {
                 case "insert":
                     if(!trie.search(input[1])) {
                         trie.insert(input[1]);
-                        System.out.println(input[1] + " successfully inserted.");
+                        System.out.println(input[1] + " successfully inserted!");
                     }else{
                         System.out.println(input[1] + " already exists.");
                     }
