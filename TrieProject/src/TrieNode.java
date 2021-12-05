@@ -27,6 +27,14 @@ public class TrieNode {
     }
 
     /**
+     * Getter for character value of the node
+     * @return character value
+     */
+    public char getC() {
+        return c;
+    }
+
+    /**
      * Method used for getting the children of a specific node
      * @return map of children
      */
