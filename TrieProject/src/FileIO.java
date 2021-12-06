@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *  FileIO Class used for handling the specific input file for this implementation/demo
+ * FileIO Class used for handling the specific input file for this implementation/demo
  */
 
 public class FileIO {
@@ -26,6 +26,7 @@ public class FileIO {
 
     /**
      * Method used to process the text of the input file
+     *
      * @return a list of the processed words from the input file
      */
     public List<String> processText() {
@@ -40,7 +41,7 @@ public class FileIO {
             }
 
 
-            // Skipping first lines containing title of the story.
+            // Skipping first line containing title of the story.
             if (line.charAt(0) != '#') {
                 String[] words = line.split(" ");
 

@@ -19,6 +19,7 @@ public class Trie {
 
     /**
      * Method used to insert a word into the trie
+     *
      * @param wordToAdd word to add to the trie
      */
     public void insert(String wordToAdd) {
@@ -45,6 +46,7 @@ public class Trie {
 
     /**
      * Method used to search the trie for a specific word
+     *
      * @param wordToSearch word to search the trie tree for
      * @return true or false based on whether the word was found
      */
@@ -70,12 +72,13 @@ public class Trie {
 
     /**
      * Method used to delete a specified word from the trie
+     *
      * @param wordToDelete word meant to be deleted from the trie
      * @return boolean based on whether the word was successfully deleted or not from the trie
      */
-    public boolean delete(String wordToDelete){
+    public boolean delete(String wordToDelete) {
 
-        if(!search(wordToDelete)){
+        if (!search(wordToDelete)) {
             return false;
         }
 
@@ -84,24 +87,24 @@ public class Trie {
         stack.push(currentNode);
         boolean isLastLetter = true;
 
-        for(int i = 0; i < wordToDelete.length(); i++){
+        for (int i = 0; i < wordToDelete.length(); i++) {
             currentNode = currentNode.getChildren().get(wordToDelete.charAt(i));
             stack.push(currentNode);
         }
 
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             currentNode = stack.pop();
 
-            if(isLastLetter){
+            if (isLastLetter) {
                 currentNode.setIsWord(false);
                 isLastLetter = false;
             }
 
-            if(currentNode.isWord()){
+            if (currentNode.isWord()) {
                 break;
             }
 
-            if(!stack.isEmpty() && currentNode.getChildren().isEmpty()){
+            if (!stack.isEmpty() && currentNode.getChildren().isEmpty()) {
                 stack.peek().getChildren().remove(currentNode.getC());
             }
         }
