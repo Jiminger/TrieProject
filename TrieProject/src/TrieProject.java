@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * @author : James Ritchie
  * Date : December 04, 2021
- * Dourse : COSC-310: Data Structures and Algorithms (Fall 2021)
+ * Course : COSC-310: Data Structures and Algorithms (Fall 2021)
  * Description:
  * This project is to demonstrate the implementation of the trie data structure in java.
  * The program reads from a text input file and creates a trie tree based on the text.
