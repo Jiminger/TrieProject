@@ -13,8 +13,7 @@ Supported Operations:
   <li>Delete</li>
 </ul> 
 
-<br>
-<hr>
+
 Course: 
 COSC-310: Data Structures and Algorithms (Fall 2021) @ Frostburg State University
 <br>
